@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Heart, Eye, MessageCircle } from 'lucide-react';
+import { ShoppingCart, Heart, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -23,13 +23,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const [selectedSize, setSelectedSize] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
-
-  const handleBuyNow = () => {
-    const selectedProduct = prices[selectedSize];
-    const message = `Hi! I'm interested in buying ${name} (${category}) - ${selectedProduct.size} for ₹${selectedProduct.price}. Can you help me with the purchase?`;
-    const whatsappUrl = `https://wa.me/919591518440?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
 
   return (
     <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
@@ -136,14 +129,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </div>
 
-        {/* Buy Now Button */}
+        {/* Add to Cart Button */}
         <Button 
-          onClick={handleBuyNow}
-          className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          className="w-full bg-charcoal-800 hover:bg-charcoal-900 text-white transition-all duration-300 transform hover:scale-105"
           size="lg"
         >
-          <MessageCircle className="h-4 w-4 mr-2" />
-          Buy Now on WhatsApp
+          <ShoppingCart className="h-4 w-4 mr-2" />
+          Add to Cart
         </Button>
       </div>
     </div>
