@@ -8,39 +8,80 @@ const ProductSection = () => {
       name: 'Black Currant',
       category: 'Attar' as const,
       prices: [
-        { size: '6ml', price: 199 },
-        { size: '3ml', price: 99 }
+        { size: '20ml', price: 399 },
+        { size: '30ml', price: 549 },
+        { size: '50ml', price: 799 },
+        { size: '100ml', price: 1299 }
       ],
-      image: '/placeholder-perfume.jpg',
+      image: '/images/black_current.jpg',
       isBestseller: true
     },
     {
       name: 'Cool Water',
       category: 'Attar' as const,
       prices: [
-        { size: '6ml', price: 149 },
-        { size: '3ml', price: 79 }
+        { size: '20ml', price: 349 },
+        { size: '30ml', price: 499 },
+        { size: '50ml', price: 749 },
+        { size: '100ml', price: 1249 }
       ],
-      image: '/placeholder-perfume.jpg',
+      image: '/images/cool_water20m.jpg',
       isNew: true
     },
     {
       name: 'White Oud',
       category: 'Attar' as const,
       prices: [
-        { size: '6ml', price: 149 },
-        { size: '3ml', price: 79 }
+        { size: '20ml', price: 349 },
+        { size: '30ml', price: 499 },
+        { size: '50ml', price: 749 },
+        { size: '100ml', price: 1249 }
       ],
-      image: '/placeholder-perfume.jpg'
+      image: '/images/white_oud.jpg'
     },
     {
       name: 'CR7',
       category: 'Attar' as const,
       prices: [
-        { size: '6ml', price: 149 },
-        { size: '3ml', price: 79 }
+        { size: '20ml', price: 349 },
+        { size: '30ml', price: 499 },
+        { size: '50ml', price: 749 },
+        { size: '100ml', price: 1249 }
       ],
-      image: '/placeholder-perfume.jpg'
+      image: '/images/cr720ml.jpg'
+    },
+    {
+      name: 'Ameer Al Oud',
+      category: 'Attar' as const,
+      prices: [
+        { size: '20ml', price: 499 },
+        { size: '30ml', price: 699 },
+        { size: '50ml', price: 999 },
+        { size: '100ml', price: 1599 }
+      ],
+      image: '/images/ameer_al_oud20ml.jpg'
+    },
+    {
+      name: 'Bin Sheik',
+      category: 'Attar' as const,
+      prices: [
+        { size: '20ml', price: 499 },
+        { size: '30ml', price: 699 },
+        { size: '50ml', price: 999 },
+        { size: '100ml', price: 1599 }
+      ],
+      image: '/images/bin_sheik20ml.jpg'
+    },
+    {
+      name: 'Oud Al Harmain',
+      category: 'Attar' as const,
+      prices: [
+        { size: '20ml', price: 499 },
+        { size: '30ml', price: 699 },
+        { size: '50ml', price: 999 },
+        { size: '100ml', price: 1599 }
+      ],
+      image: '/images/oud_al_harmain20ml.jpg'
     }
   ];
 
@@ -49,39 +90,80 @@ const ProductSection = () => {
       name: 'Black Currant',
       category: 'Perfume' as const,
       prices: [
-        { size: '20ml', price: 299 },
-        { size: '8ml', price: 149 }
+        { size: '20ml', price: 399 },
+        { size: '30ml', price: 549 },
+        { size: '50ml', price: 799 },
+        { size: '100ml', price: 1299 }
       ],
-      image: '/placeholder-perfume.jpg',
+      image: '/images/black_current20ml.jpg',
       isBestseller: true
     },
     {
       name: 'Cool Water',
       category: 'Perfume' as const,
       prices: [
-        { size: '20ml', price: 199 },
-        { size: '8ml', price: 99 }
+        { size: '20ml', price: 299 },
+        { size: '30ml', price: 399 },
+        { size: '50ml', price: 599 },
+        { size: '100ml', price: 999 }
       ],
-      image: '/placeholder-perfume.jpg'
+      image: '/images/cool_water8ml.jpg'
     },
     {
       name: 'White Oud',
       category: 'Perfume' as const,
       prices: [
-        { size: '20ml', price: 249 },
-        { size: '8ml', price: 99 }
+        { size: '20ml', price: 349 },
+        { size: '30ml', price: 499 },
+        { size: '50ml', price: 749 },
+        { size: '100ml', price: 1249 }
       ],
-      image: '/placeholder-perfume.jpg',
+      image: '/images/white_oud.jpg',
       isNew: true
     },
     {
       name: 'CR7',
       category: 'Perfume' as const,
       prices: [
-        { size: '20ml', price: 249 },
-        { size: '8ml', price: 99 }
+        { size: '20ml', price: 349 },
+        { size: '30ml', price: 499 },
+        { size: '50ml', price: 749 },
+        { size: '100ml', price: 1249 }
       ],
-      image: '/placeholder-perfume.jpg'
+      image: '/images/cr720ml.jpg'
+    },
+    {
+      name: 'Bling',
+      category: 'Perfume' as const,
+      prices: [
+        { size: '20ml', price: 449 },
+        { size: '30ml', price: 599 },
+        { size: '50ml', price: 849 },
+        { size: '100ml', price: 1349 }
+      ],
+      image: '/images/bling20ml.jpg'
+    },
+    {
+      name: 'Creed Adventus',
+      category: 'Perfume' as const,
+      prices: [
+        { size: '20ml', price: 499 },
+        { size: '30ml', price: 699 },
+        { size: '50ml', price: 999 },
+        { size: '100ml', price: 1599 }
+      ],
+      image: '/images/creed_adventus20ml.jpg'
+    },
+    {
+      name: 'Paris',
+      category: 'Perfume' as const,
+      prices: [
+        { size: '20ml', price: 399 },
+        { size: '30ml', price: 549 },
+        { size: '50ml', price: 799 },
+        { size: '100ml', price: 1299 }
+      ],
+      image: '/images/paris20ml.jpg'
     }
   ];
 

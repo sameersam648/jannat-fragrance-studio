@@ -106,27 +106,28 @@ const Footer = () => {
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-gold-400 mt-1 flex-shrink-0" />
                   <div className="text-gray-300">
-                    <p>123 Fragrance Street</p>
-                    <p>Mumbai, Maharashtra 400001</p>
+                    <p>BTM, 2nd Stage</p>
+                    <p>Bangalore, karnataka 560068</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-gold-400 flex-shrink-0" />
                   <a href="tel:+91-9876543210" className="text-gray-300 hover:text-gold-400">
-                    +91-98765 43210
+                    +91 95915 18440
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-gold-400 flex-shrink-0" />
                   <a href="mailto:hello@jannatperfumes.com" className="text-gray-300 hover:text-gold-400">
-                    hello@jannatperfumes.com
+                    @jannatperfumes.com
                   </a>
                 </div>
               </div>
 
               {/* WhatsApp Support */}
               <div className="mt-6">
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                <Button className="w-full bg-green-600 hover:bg-green-700 text-white"
+                          onClick={() => window.open('https://wa.me/919591518440', '_blank')}>
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp Support
                 </Button>

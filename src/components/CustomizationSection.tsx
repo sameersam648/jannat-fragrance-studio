@@ -11,6 +11,7 @@ const CustomizationSection = () => {
     stickerDesign: 'Minimal',
     labelColor: 'Gold',
     fontStyle: 'Elegant Serif',
+    concentration: 'Standard',
     customerName: ''
   });
 
@@ -18,6 +19,11 @@ const CustomizationSection = () => {
   const stickerDesigns = ['Minimal', 'Floral', 'Calligraphy'];
   const labelColors = ['Black', 'Gold', 'White', 'Custom'];
   const fontStyles = ['Elegant Serif', 'Arabic Calligraphy', 'Modern Sans'];
+  const concentrations = [
+    { name: 'Standard', price: 0 },
+    { name: '31-35%', price: 100 },
+    { name: '36-40%', price: 150 }
+  ];
 
   const updateCustomization = (key: string, value: string) => {
     setCustomization(prev => ({ ...prev, [key]: value }));
@@ -135,6 +141,34 @@ const CustomizationSection = () => {
               </div>
             </div>
 
+            {/* Concentration */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="flex items-center mb-4">
+                <Sparkles className="h-6 w-6 text-gold-600 mr-3" />
+                <h3 className="text-xl font-semibold text-charcoal-900">Concentration</h3>
+              </div>
+              <div className="space-y-3">
+                {concentrations.map((conc) => (
+                  <button
+                    key={conc.name}
+                    onClick={() => updateCustomization('concentration', conc.name)}
+                    className={`w-full p-4 rounded-lg border-2 text-left transition-all ${
+                      customization.concentration === conc.name
+                        ? 'border-gold-600 bg-gold-50 text-gold-700'
+                        : 'border-cream-200 hover:border-gold-400 text-charcoal-600'
+                    }`}
+                  >
+                    <div className="flex justify-between items-center">
+                      <div className="text-sm font-medium">{conc.name}</div>
+                      {conc.price > 0 && (
+                        <div className="text-sm font-bold text-gold-600">+₹{conc.price}</div>
+                      )}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Customer Name */}
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <Label htmlFor="customerName" className="text-xl font-semibold text-charcoal-900 mb-4 block">
@@ -212,6 +246,7 @@ const CustomizationSection = () => {
                 <div><strong>Design:</strong> {customization.stickerDesign}</div>
                 <div><strong>Label:</strong> {customization.labelColor}</div>
                 <div><strong>Font:</strong> {customization.fontStyle}</div>
+                <div><strong>Concentration:</strong> {customization.concentration}</div>
                 {customization.customerName && (
                   <div><strong>Name:</strong> {customization.customerName}</div>
                 )}
@@ -219,9 +254,17 @@ const CustomizationSection = () => {
 
               {/* Price and Order */}
               <div className="text-center">
-                <div className="text-2xl font-bold text-charcoal-900 font-playfair mb-4">
-                  ₹399 <span className="text-sm text-charcoal-500 font-medium">+ base perfume</span>
+                <div className="text-2xl font-bold text-charcoal-900 font-playfair mb-4 line-through text-red-500">
+                  ₹399 <span className="text-sm text-charcoal-500 font-medium"></span>
                 </div>
+                <div className="text-3xl font-bold text-gold-600 mb-2">
+                  Free Customization
+                </div>
+                {customization.concentration !== 'Standard' && (
+                  <div className="text-lg font-semibold text-gold-600 mb-4">
+                    + ₹{concentrations.find(c => c.name === customization.concentration)?.price || 0} for {customization.concentration} concentration
+                  </div>
+                )}
                 
                 <Button 
                   size="lg" 
