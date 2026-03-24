@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 
 const Footer = () => {
   return (
-    <footer className="bg-charcoal-900 text-white">
+    <footer id="contact" className="bg-charcoal-900 text-white">
       {/* Newsletter Section */}
       <div className="bg-gradient-to-r from-gold-600 to-gold-700 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

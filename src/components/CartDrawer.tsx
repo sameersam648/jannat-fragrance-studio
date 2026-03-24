@@ -3,6 +3,7 @@ import { X, Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
 import { CartItem } from '@/contexts/CartContext';
+import { resolveAssetUrl } from '@/lib/utils';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -39,7 +40,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose, onCheckout }) 
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-cream-200">
+        <div className="flex items-center justify-between p-6 border-b border-cream-200 bg-white">
           <div className="flex items-center space-x-3">
             <ShoppingBag className="h-6 w-6 text-gold-600" />
             <h2 className="text-xl font-semibold text-charcoal-900">Shopping Cart</h2>
@@ -60,7 +61,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose, onCheckout }) 
         </div>
 
         {/* Cart Items */}
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="flex-1 overflow-y-auto p-6 bg-cream-50">
           {state.items.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingBag className="h-16 w-16 text-cream-400 mx-auto mb-4" />
@@ -74,7 +75,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose, onCheckout }) 
                   {/* Product Image */}
                   <div className="flex-shrink-0">
                     <img
-                      src={item.image}
+                      src={resolveAssetUrl(item.image)}
                       alt={item.name}
                       className="w-16 h-16 object-cover rounded-md"
                     />
@@ -137,7 +138,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose, onCheckout }) 
 
         {/* Footer */}
         {state.items.length > 0 && (
-          <div className="border-t border-cream-200 p-6 space-y-4">
+          <div className="border-t border-cream-200 p-6 space-y-4 bg-white">
             {/* Subtotal */}
             <div className="flex justify-between items-center">
               <span className="text-lg font-medium text-charcoal-900">Subtotal</span>

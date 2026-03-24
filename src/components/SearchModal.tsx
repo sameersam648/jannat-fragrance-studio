@@ -3,6 +3,7 @@ import { X, Search, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useCart } from '@/contexts/CartContext';
+import { resolveAssetUrl } from '@/lib/utils';
 
 interface Product {
   name: string;
@@ -123,7 +124,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, products }) 
                     <div className="flex items-start space-x-3">
                       {/* Product Image */}
                       <img
-                        src={product.image}
+                        src={resolveAssetUrl(product.image)}
                         alt={product.name}
                         className="w-16 h-16 object-cover rounded-md"
                       />

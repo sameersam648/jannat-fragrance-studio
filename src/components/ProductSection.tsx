@@ -192,9 +192,9 @@ const ProductSection = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
             {attars.map((product, index) => (
-              <div key={index} className="animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <div key={index} className="animate-scale-in h-full" style={{ animationDelay: `${index * 100}ms` }}>
                 <ProductCard {...product} />
               </div>
             ))}
@@ -212,9 +212,9 @@ const ProductSection = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
             {perfumes.map((product, index) => (
-              <div key={index} className="animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <div key={index} className="animate-scale-in h-full" style={{ animationDelay: `${index * 100}ms` }}>
                 <ProductCard {...product} />
               </div>
             ))}

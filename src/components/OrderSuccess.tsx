@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckCircle, Package, Truck, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
+import { resolveAssetUrl } from '@/lib/utils';
 
 interface OrderSuccessProps {
   orderId: string;
@@ -72,7 +73,7 @@ const OrderSuccess: React.FC<OrderSuccessProps> = ({
               <div key={item.id} className="flex justify-between items-center">
                 <div className="flex items-center space-x-3">
                   <img
-                    src={item.image}
+                    src={resolveAssetUrl(item.image)}
                     alt={item.name}
                     className="w-12 h-12 object-cover rounded-md"
                   />

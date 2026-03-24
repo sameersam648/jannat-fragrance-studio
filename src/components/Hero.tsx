@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { ArrowRight, Sparkles, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const perfumeNotes = [
   'Oud', 'Rose', 'Amber', 'Musk', 'Citrus', 'Sandalwood', 'Jasmine', 'Patchouli'
@@ -95,18 +96,22 @@ const Hero = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
+                  asChild
                   size="lg" 
                   className="bg-gradient-to-r from-gold-500 to-gold-700 hover:from-gold-600 hover:to-gold-800 text-white px-8 py-6 text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-xl ring-2 ring-gold-200/60 focus:ring-4 focus:ring-gold-400/40 animate-glow"
                 >
-                  Explore Collection
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <Link to="/explore">
+                    Explore Now
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
                 <Button 
+                  asChild
                   variant="outline" 
                   size="lg" 
                   className="border-2 border-plum-600 text-plum-700 hover:bg-plum-600 hover:text-white px-8 py-6 text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md animate-glow2"
                 >
-                  Customize Perfume
+                  <Link to="/customize">Customize Perfume</Link>
                 </Button>
               </div>
             </div>

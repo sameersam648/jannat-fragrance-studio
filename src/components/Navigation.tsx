@@ -7,6 +7,7 @@ import CartDrawer from './CartDrawer';
 import SearchModal from './SearchModal';
 import razorpayService from '@/services/razorpay';
 import OrderSuccess from './OrderSuccess';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -189,11 +190,11 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'Shop All', href: '#shop' },
-    { name: 'Customize', href: '#customize' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', to: '/' },
+    { name: 'Shop All', to: '/explore' },
+    { name: 'Customize', to: '/customize' },
+    { name: 'About Us', to: '/#about' },
+    { name: 'Contact', to: '/#contact' },
   ];
 
   const handleCheckout = async () => {
@@ -248,14 +249,14 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.to}
                 className="text-charcoal-700 hover:text-gold-600 font-medium transition-colors duration-200 relative group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -298,14 +299,14 @@ const Navigation = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-cream-200">
           <div className="px-4 py-6 space-y-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.to}
                 className="block text-charcoal-700 hover:text-gold-600 font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <div className="flex items-center space-x-4 pt-4 border-t border-cream-200">
               <Button 
